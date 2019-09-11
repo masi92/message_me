@@ -5,11 +5,11 @@ h1.ui.center.aligned.icon.header
 .ui.two.column.grid
     .twelve.wide.column
         .ui.fluid.raised.card.chatbox
-            .content
+            .content#messages
                 .ui.feed
                     = render @messages
             .extra.content
-                = form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path) do |f|
+                = form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f|
                     .field
                         .ui.fluid.icon.input
                             = f.text_field :body
